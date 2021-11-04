@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CoolCat">
         <activity
+            android:name=".view.BreedDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.AllBreedsActivity"
             android:exported="true">
             <intent-filter>
