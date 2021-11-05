@@ -2,13 +2,9 @@ package com.example.coolcat.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
-import androidx.recyclerview.widget.GridLayoutManager
 import com.example.coolcat.adapter.CoolCatAdapter
 import com.example.coolcat.databinding.ActivityAllBreedsBinding
-import com.example.coolcat.repo.remote.CatImage
-import com.example.coolcat.repo.remote.CatInfo
 import com.example.coolcat.viewmodel.CoolCatViewModel
 
 /**
@@ -28,7 +24,8 @@ BreedDetailActivity [Part 2] *ONLY START WHEN PART 1 IS DONE*
 
 - Show all details of Breed selected
 
-- For UI mimic what they did here https://thecatapi.com/example-pages/breed-selection.html *Ignore the drop down at the top with list of breed*
+- For UI mimic what they did here https://thecatapi.com/example-pages/breed-selection.html
+    *Ignore the drop down at the top with list of breed*
  */
 
 class AllBreedsActivity : AppCompatActivity() {
@@ -43,8 +40,6 @@ class AllBreedsActivity : AppCompatActivity() {
         initViews()
 
         viewModel.coolCats.observe(this) {
-            // Here is where your will get the result
-            Log.d("MainActivity", "onCreate: $it")
             (binding.rvImages.adapter as CoolCatAdapter).updateCatInfo(it)
         }
     }

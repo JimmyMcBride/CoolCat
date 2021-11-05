@@ -6,6 +6,6 @@ import retrofit2.Response
 
 object CoolCatRepo {
     suspend fun getCatBreedsInfo(): Response<List<CatInfo>> {
-        return RetrofitInstance.coolCatService.getAllBreedsInfo()
+        return RetrofitInstance.coolCatService.getAllBreeds()
     }
 }

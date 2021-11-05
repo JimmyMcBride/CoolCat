@@ -1,11 +1,17 @@
 package com.example.coolcat.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.coolcat.constants.Constants
 import com.example.coolcat.databinding.CatImageBinding
 import com.example.coolcat.extensions.loadUrl
 import com.example.coolcat.repo.remote.CatInfo
+import com.example.coolcat.view.AllBreedsActivity
+import com.example.coolcat.view.BreedDetailsActivity
+import java.io.Serializable
 
 class CoolCatAdapter: RecyclerView.Adapter<CoolCatAdapter.CoolCatViewHolder>() {
 
@@ -40,6 +46,14 @@ class CoolCatAdapter: RecyclerView.Adapter<CoolCatAdapter.CoolCatViewHolder>() {
 //            ivImage.loadUrl(url)
             ivImage.loadUrl(catInfo.image?.url ?: "https://www.clipartkey.com/mpngs/m/152-1520367_user-profile-default-image-png-clipart-png-download.png")
             tvCatName.text = catInfo.name
+//            ivImage.setOnClickListener()
+            clCatWrapper.setOnClickListener {
+                // Code here executes on main thread after user presses button
+                val intent = Intent(binding.root.context, BreedDetailsActivity::class.java)
+                intent.putExtra(Constants.BREED_ID, catInfo as Serializable)
+                startActivity(binding.root.context, intent, null)
+            }
+
         }
 
         companion object {
