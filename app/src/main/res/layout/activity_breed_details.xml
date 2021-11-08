@@ -1,54 +1,290 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.BreedDetailsActivity">
+    android:layout_height="wrap_content">
 
-<!--    <com.google.android.material.textview.MaterialTextView-->
-<!--        android:id="@+id/tv_cat_id"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        android:gravity="center"-->
-<!--        android:textAppearance="?attr/textAppearanceBody1"-->
-<!--        tools:text="Cat ID" />-->
-
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/iv_image"
-        android:layout_width="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_height="200dp"
-        android:scaleType="fitCenter" />
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_cat_name"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/iv_image"
-        android:gravity="center"
-        android:textAppearance="?attr/textAppearanceBody1"
-        tools:text="Cat Name" />
+        tools:context=".view.BreedDetailsActivity">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_cat_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tv_cat_name"
-        android:gravity="center"
-        android:textAppearance="?attr/textAppearanceBody1"
-        tools:text="Cat description..." />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <RatingBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:rating="3"
-        style="?android:attr/ratingBarStyleIndicator"
-        app:layout_constraintTop_toBottomOf="@+id/tv_cat_description"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:progressTint="#FFCC01"
-        android:id="@+id/smallRating"
-        />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_cat_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="32dp"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintTop_toBottomOf="@+id/iv_image"
+            tools:text="Cat Name" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_cat_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginVertical="16dp"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cat_name"
+            tools:text="Cat description..." />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_cat_temperament"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textStyle="italic"
+            android:layout_marginVertical="16dp"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cat_description"
+            tools:text="Cat temperament..." />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_affection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="start"
+            android:text="@string/affection_level"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cat_temperament" />
+
+        <RatingBar
+            android:id="@+id/rb_affection"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:progressTint="#FFCC01"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_affection" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_adaptability"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="start"
+            android:text="@string/adaptability_level"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintTop_toBottomOf="@+id/rb_affection" />
+
+        <RatingBar
+            android:id="@+id/rb_adaptability"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:progressTint="#FFCC01"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_adaptability" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_child_friendly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_marginTop="16dp"
+            android:text="@string/child_friendly"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintTop_toBottomOf="@+id/rb_adaptability" />
+
+        <RatingBar
+            android:id="@+id/rb_child_friendly"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:progressTint="#FFCC01"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_child_friendly" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_dog_friendly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_marginTop="16dp"
+            android:text="@string/dog_friendly"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintTop_toBottomOf="@+id/rb_child_friendly" />
+
+        <RatingBar
+            android:id="@+id/rb_dog_friendly"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:progressTint="#FFCC01"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_dog_friendly" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_energy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_marginTop="16dp"
+            android:text="@string/energy_level"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintTop_toBottomOf="@+id/rb_dog_friendly" />
+
+        <RatingBar
+            android:id="@+id/rb_energy"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:progressTint="#FFCC01"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_energy" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_grooming"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_marginTop="16dp"
+            android:text="@string/grooming"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintTop_toBottomOf="@+id/rb_energy" />
+
+        <RatingBar
+            android:id="@+id/rb_grooming"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:progressTint="#FFCC01"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_grooming" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_health"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_marginTop="16dp"
+            android:text="@string/health_issues"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintTop_toBottomOf="@+id/rb_grooming" />
+
+        <RatingBar
+            android:id="@+id/rb_health"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:progressTint="#FFCC01"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_health" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_intelligence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_marginTop="16dp"
+            android:text="@string/intelligence"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintTop_toBottomOf="@+id/rb_health" />
+
+        <RatingBar
+            android:id="@+id/rb_intelligence"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:progressTint="#FFCC01"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_intelligence" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_shedding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_marginTop="16dp"
+            android:text="@string/shedding_level"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintTop_toBottomOf="@+id/rb_intelligence" />
+
+        <RatingBar
+            android:id="@+id/rb_shedding"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:progressTint="#FFCC01"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_shedding" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_social_needs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_marginTop="16dp"
+            android:text="@string/social_needs"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintTop_toBottomOf="@+id/rb_shedding" />
+
+        <RatingBar
+            android:id="@+id/rb_social_needs"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:progressTint="#FFCC01"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_social_needs" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_stranger_friendly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_marginTop="16dp"
+            android:text="@string/stranger_friendly"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintTop_toBottomOf="@+id/rb_social_needs" />
+
+        <RatingBar
+            android:id="@+id/rb_stranger_friendly"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:progressTint="#FFCC01"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_stranger_friendly" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_vocalization"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_marginTop="16dp"
+            android:text="@string/vocalization"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintTop_toBottomOf="@+id/rb_stranger_friendly" />
+
+        <RatingBar
+            android:id="@+id/rb_vocalization"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:progressTint="#FFCC01"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_vocalization" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_wiki_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:autoLink="all"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rb_vocalization" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

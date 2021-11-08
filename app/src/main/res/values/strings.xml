@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Cool Cat</string>
+    <string name="affection_level">Affection Level</string>
+    <string name="adaptability_level">Adaptability level</string>
+    <string name="child_friendly">Child Friendly</string>
+    <string name="dog_friendly">Dog Friendly</string>
+    <string name="energy_level">Energy Level</string>
+    <string name="grooming">Grooming</string>
+    <string name="health_issues">Health Issues</string>
+    <string name="intelligence">Intelligence</string>
+    <string name="shedding_level">Shedding Level</string>
+    <string name="social_needs">Social Needs</string>
+    <string name="stranger_friendly">Stranger Friendly</string>
+    <string name="vocalization">Vocalization</string>
 </resources>

@@ -44,13 +44,13 @@ class CoolCatAdapter: RecyclerView.Adapter<CoolCatAdapter.CoolCatViewHolder>() {
 
         fun loadInfo(catInfo: CatInfo) = with(binding) {
 //            ivImage.loadUrl(url)
-            ivImage.loadUrl(catInfo.image?.url ?: "https://www.clipartkey.com/mpngs/m/152-1520367_user-profile-default-image-png-clipart-png-download.png")
+            ivImage.loadUrl(catInfo.image?.url ?: Constants.DEFAULT_IMG)
             tvCatName.text = catInfo.name
 //            ivImage.setOnClickListener()
             clCatWrapper.setOnClickListener {
                 // Code here executes on main thread after user presses button
                 val intent = Intent(binding.root.context, BreedDetailsActivity::class.java)
-                intent.putExtra(Constants.BREED_ID, catInfo as Serializable)
+                intent.putExtra(Constants.BREED_INFO, catInfo as Serializable)
                 startActivity(binding.root.context, intent, null)
             }
 

@@ -4,7 +4,8 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import java.io.Serializable
 
-@JsonClass (generateAdapter = true) data class CatInfo (
+@JsonClass(generateAdapter = true)
+data class CatInfo(
     val id: String,
     val name: String,
     val image: ImageInfo?,
@@ -43,16 +44,17 @@ import java.io.Serializable
     @Json(name = "wikipedia_url") val wikipediaUrl: String?,
     val hypoallergenic: Int,
     @Json(name = "reference_image_id") val referenceImageId: String?,
-) : Serializable
-
-{
-    @JsonClass(generateAdapter = true) data class ImageInfo(
+) : Serializable {
+    @JsonClass(generateAdapter = true)
+    data class ImageInfo(
         val id: String?,
         val width: Int?,
         val height: Int?,
         val url: String?
     ) : Serializable
-    @JsonClass(generateAdapter = true) data class WeightInfo(
+
+    @JsonClass(generateAdapter = true)
+    data class WeightInfo(
         val imperial: String,
         val metric: String
     ) : Serializable
